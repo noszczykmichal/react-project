@@ -10,6 +10,7 @@ const StyledButton= styled.button`
   border: 1px solid green;
   padding: 8px;
   cursor: pointer;
+
   &:hover {
   background-color: ${props=> props.alt? 'salmon' : 'lightgreen'};
   color: black;
@@ -108,9 +109,9 @@ class App extends Component {
       <div className="App">
         <h1>Hi, I'm a React App</h1>
         <p className={classes.join(' ')}>This is really working!</p>
-        <StyledButton alt={this.state.showPersons} onClick={this.togglePersonsHandler}>
+        <button className="button" onClick={this.togglePersonsHandler}>
             Toggle Persons
-        </StyledButton>
+        </button>
           {persons}
       </div>
      
