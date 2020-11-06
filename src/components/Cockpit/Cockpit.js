@@ -1,9 +1,10 @@
 import React, {useEffect, useRef} from 'react';
 import classes from './Cockpit.css';
+import AuthContext from '../../context/auth-context';
+
 
 const cockpit = (props) => {
     const toggleBtnRef=useRef(null);
-    
 
     //if I need useEffect as componentDidMount I can pass and empty array
 
@@ -54,6 +55,9 @@ const cockpit = (props) => {
             <button ref={toggleBtnRef} className={btnClass} onClick={props.clicked}>
                 Toggle Persons
             </button>
+            <AuthContext.Consumer>
+                {(context)=><button onClick={context.login}>Log in</button>}    
+            </AuthContext.Consumer>            
         </div>
     );
 }
